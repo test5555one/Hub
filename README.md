@@ -1,24 +1,18 @@
-# Portfolio Website (animiert & responsive)
+# Portfolio Website (updated)
 
-Diese Version enthält ein stark verbessertes, animiertes Portfolio-Template mit:
+Ich habe folgende Ergänzungen vorgenommen (auf Wunsch):
 
-- Animierten Hero-Bereich mit dekorativen SVG-Blobs
-- Reveal-Animationen beim Scrollen (IntersectionObserver)
-- Hover- und Tilt-Effekte auf Projekt-Karten
-- Parallax-Effekt im Hero
-- Responsives Layout für alle Geräte
-- Einfacher Kontakt-Fallback über mailto (kann gegen ein echtes Backend ausgetauscht werden)
+- 3D‑Druck: Hinweis auf Creality und Prusa Drucker, eigener Projekt‑Card
+- Studium: Nautik an der Jade Hochschule hinzugefügt
+- Social: LinkedIn & Instagram Links in Header/Footer und eine interaktive LinkedIn‑Vorschau (Modal mit iframe + Fallback) — Hinweis: manche Dienste blockieren Einbettungen in iframes (X-Frame-Options). Falls die Vorschau geblockt wird, gibt es einen direkten Link.
 
-Anpassungen vor dem Livegang:
-- Ersetze "Dein Name" in `index.html` durch deinen echten Namen.
-- Setze im `script.js` die E‑Mail-Adresse `deine-email@beispiel.de` auf deine echte Adresse oder implementiere ein Backend.
-- Farben sind in `style.css` im :root als CSS-Variablen konfiguriert.
+Was du noch anpassen solltest:
+- Ersetze "Dein Name" durch deinen echten Namen in `index.html`.
+- Setze in `script.js` die E‑Mail-Adresse `deine-email@beispiel.de` auf deine echte Adresse oder implementiere ein Backend für das Kontaktformular.
+- Optional: füge echte 3D‑Druck‑Bilder / Druck‑Galerie und LinkedIn/Instagram Post‑Embeds (benötigt Post‑Links) hinzu.
 
-Deployment:
-1. Die Dateien wurden in das Repository gepusht.
-2. Aktiviere GitHub Pages (Settings → Pages) auf dem `main`-Branch, um die Seite zu veröffentlichen.
-
-Nächste Schritte (optional):
-- Ich kann ein Kontakt-Backend (Netlify Functions / Formspree / simple serverless) integrieren, wenn du möchtest.
-- Ich kann dein Foto/Logo, reale Screenshots oder ein Favicon hinzufügen.
+Wenn du möchtest, kann ich:
+- Deinen Namen, E‑Mail und ein Profilbild direkt einpflegen.
+- Ein kleines Kontakt‑Backend (Formspree / Netlify) konfigurieren.
+- Eine Galerie mit 3D‑Druck Bildern hinzufügen (du kannst die Bilder hier hochladen oder Links angeben).
 

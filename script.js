@@ -1,4 +1,4 @@
-// script.js — interactivity, animations and contact handling
+// script.js — interactivity, animations, LinkedIn modal and contact handling
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('nav-toggle');
   const nav = document.getElementById('main-nav');
@@ -69,6 +69,42 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // LinkedIn modal behavior (attempt iframe, fallback to link)
+  const openBtn = document.getElementById('open-linkedin');
+  const modal = document.getElementById('linkedin-modal');
+  const iframe = document.getElementById('linkedin-iframe');
+  const fallback = document.getElementById('linkedin-fallback');
+  const closeBtn = document.getElementById('modal-close');
+  const linkedinUrl = 'https://www.linkedin.com/in/simon-luca-fischer-5b88013bb/';
+
+  function openModal() {
+    modal.setAttribute('aria-hidden', 'false');
+    // try to load profile in iframe — some sites block embedding, so show fallback if not loaded in time
+    iframe.src = linkedinUrl;
+    fallback.setAttribute('aria-hidden', 'true');
+
+    // if iframe doesn't visually load due to X-Frame-Options, show fallback after timeout
+    let loaded = false;
+    const onLoad = () => { loaded = true; fallback.setAttribute('aria-hidden', 'true'); iframe.style.display = 'block'; }
+    iframe.addEventListener('load', onLoad, {once:true});
+
+    setTimeout(()=>{
+      if (!loaded) {
+        iframe.style.display = 'none';
+        fallback.setAttribute('aria-hidden', 'false');
+      }
+    }, 1200);
+  }
+
+  function closeModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    iframe.src = '';
+  }
+
+  openBtn?.addEventListener('click', openModal);
+  closeBtn?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (e)=>{ if (e.target === modal) closeModal(); });
 
   // Contact form: open mailto as fallback and show nicer status
   const form = document.getElementById('contact-form');
